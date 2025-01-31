@@ -13,7 +13,8 @@ EOF
     exit 1
 }
 
-num_jobs=2
+CORES=$(nproc)
+num_jobs=$(( 2 * CORES))
 command="cp"
 
 while getopts "c:d:j:hv" opt; do
